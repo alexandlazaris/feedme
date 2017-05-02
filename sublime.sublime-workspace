@@ -1,0 +1,441 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"w",
+				"wait"
+			],
+			[
+				"webdr",
+				"webdriver"
+			],
+			[
+				"get",
+				"get_attribute"
+			],
+			[
+				"as",
+				"assertIn"
+			],
+			[
+				"cre",
+				"create_driver"
+			],
+			[
+				"elem",
+				"element_title"
+			],
+			[
+				"searc",
+				"search_field"
+			],
+			[
+				"set",
+				"setExample"
+			],
+			[
+				"se",
+				"setExample"
+			],
+			[
+				"ran",
+				"range2"
+			],
+			[
+				"ra",
+				"range1"
+			],
+			[
+				"def",
+				"defs	Method"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"border",
+				"border-image"
+			],
+			[
+				"backgo",
+				"background-size"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"paddin",
+				"padding-left"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"paddi",
+				"padding-top"
+			],
+			[
+				"padding",
+				"padding-bottom"
+			],
+			[
+				"ma",
+				"margin-bottom"
+			],
+			[
+				"servi",
+				"services"
+			],
+			[
+				"ser",
+				"services"
+			],
+			[
+				"ge",
+				"getStatus"
+			],
+			[
+				"s",
+				"box-shadow"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"selec",
+				"selectedCards"
+			],
+			[
+				"player1",
+				"player1Deck"
+			],
+			[
+				"crea",
+				"createPlayers"
+			],
+			[
+				"cree",
+				"createPlayers"
+			],
+			[
+				"num",
+				"numOfPlayersToJoin"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"",
+				"Snippet: __magic__"
+			],
+			[
+				"Lore",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"defs",
+				"Code Folding: Fold Tag Attributes"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 111.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs/Resume/Files/index.html",
+		"/C/xampp/htdocs/Resume/Files/gameDevelopment.html",
+		"/C/xampp/htdocs/Resume/tests/acceptanceTests/test_page_title.py",
+		"/C/xampp/htdocs/Resume/README.md",
+		"/C/xampp/htdocs/Resume/Files/testing.html",
+		"/C/xampp/htdocs/Resume/phantomJS/loadHome.js",
+		"/C/xampp/htdocs/Resume/phantomJS_unused/loadHome.js",
+		"/C/xampp/htdocs/Resume/Files/lead.html",
+		"/C/xampp/htdocs/Resume/Files/development.html",
+		"/C/xampp/htdocs/simple-queue-service/HelloWorld.java",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/WebTesting/node_modules/mocha/node_modules/mkdirp/bin/cmd.js",
+		"/C/xampp/htdocs/simple-queue-service/simple-queue-service/elasticmq-server-0.13.2.jar",
+		"/C/xampp/htdocs/Resume/Tests/test_page_title.py",
+		"/C/xampp/htdocs/Resume/Files/Tests/test_page_title.py",
+		"/C/xampp/htdocs/Resume/Files/GameDevelopment.html",
+		"/C/xampp/htdocs/Resume/.travis.yml",
+		"/C/xampp/htdocs/Resume/Files/Tests/test-reports/TEST-TestPageTitle-20170406222017.xml",
+		"/C/xampp/htdocs/Resume/Files/Tests/test-reports/TEST-TestPageTitle-20170406222050.xml",
+		"/C/xampp/htdocs/Resume/Files/Testing.html",
+		"/C/Users/Alexander/.jenkins/workspace/Git - Resume/Files/firebase.json",
+		"/C/xampp/htdocs/Resume/Files/Development.html",
+		"/C/xampp/htdocs/Resume/Files/Lead.html",
+		"/C/Users/Alexander/.jenkins/workspace/Git - Resume/Files/Files/index.html",
+		"/C/Users/Alexander/.jenkins/workspace/Git - Resume/Files/functions/index.js",
+		"/C/xampp/htdocs/Resume/Files/Style.css",
+		"/C/xampp/htdocs/Resume/Files/Home.html",
+		"/C/xampp/htdocs/Resume/Files/Tests/test-reports/TEST-TestPageTitle-20170328211827.xml",
+		"/C/xampp/htdocs/Resume/Files/Tests/test-reports/TEST-TestPageTitle-20170327234546.xml",
+		"/C/xampp/htdocs/Resume/Files/Tests/test-reports/TEST-TestPageTitle-20170327232410.xml",
+		"/C/Users/Alexander/Desktop/nosetests.xml",
+		"/C/xampp/htdocs/Resume/Files/Tests/Setup.py",
+		"/C/xampp/htdocs/Resume/Files/Tests/Test_Page_Titles.py",
+		"/C/xampp/htdocs/Resume/Files/Tests/firstPythonFirefoxTest.py",
+		"/C/xampp/htdocs/Resume/Files/Tests/setup.py",
+		"/C/Users/Alexander/AppData/Local/Programs/Python/Python35-32/lib/site-packages/selenium/webdriver/firefox/webdriver.py",
+		"/C/Users/Alexander/AppData/Local/Programs/Python/Python35-32/lib/site-packages/selenium/webdriver/common/service.py",
+		"/C/xampp/htdocs/WebTesting/python/test.py",
+		"/C/xampp/htdocs/WebTesting/python/math.py",
+		"/C/xampp/htdocs/WebTesting/python/test.txt",
+		"/C/Users/Alexander/AppData/Roaming/Sublime Text 2/Packages/Default/exec.py",
+		"/C/Users/Alexander/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Alexander/AppData/Roaming/Sublime Text 2/Packages/User/NewPython.sublime-build",
+		"/C/Users/Alexander/AppData/Roaming/Sublime Text 2/Packages/User/PythonW.sublime-build",
+		"/C/Users/Alexander/AppData/Roaming/Sublime Text 2/Packages/Python/Python.sublime-build",
+		"/C/xampp/htdocs/Resume/PhantomJS/loadHome.js",
+		"/C/xampp/htdocs/Resume/Files/Script.js",
+		"/C/xampp/htdocs/Resume/PhantomJS/loadForm.js",
+		"/C/Users/Alexander/.jenkins/secrets/initialAdminPassword",
+		"/C/Users/Alexander/.jenkins/secret.key",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/resume/Files/Script.js",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/resume/Files/Style.css",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/resume/Files/Development.html",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/resume/Files/Lead.html",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/resume/Files/Testing.html",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/resume/Files/GameDevelopment.html",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/resume/Files/Home.html",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/resume/Files/Development",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/resume/Files/Lead",
+		"/C/Users/Alexander/Downloads/API_AU_Products.json",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/WebTesting/Resume/Home.html",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/WebTesting/Resume/Script.js",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/WebTesting/ContentForTests/PhantomJS/loadForm.js",
+		"/C/Users/Alexander/AppData/Roaming/Sublime Text 2/Packages/User/JavaScript.sublime-build",
+		"/C/Users/Alexander/Downloads/product-data-back-end.json",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/WebTesting/ContentForTests/phantomjs-2.1.1-windows/tests/example.png",
+		"/C/xampp/perl/lib/auto/File/Path/.packlist",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/WebTesting/ContentForTests/StatusDashboard/GetInfo.js",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/WebTesting/ContentForTests/phantomjs-2.1.1-windows/examples/colorwheel.js",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/WebTesting/ContentForTests/Forms/Form.html",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/WebTesting/ContentForTests/Forms/script.js",
+		"/C/Program Files (x86)/Jenkins/secrets/initialAdminPassword",
+		"/C/Users/Alexander/Downloads/UnityIgnoreFile",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/Program Files (x86)/Jenkins/war/scripts/prototype.js",
+		"/C/Users/Alexander/Documents/automatedtesting/Lexus/lexusBuild.xml",
+		"/C/Users/Alexander/Downloads/product-data.json",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/GitHub/test/test.js",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/GitHub/test/package.json",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/MakeFile",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/GitHub/node_modules/mocha/package.json",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/GitHub/node_modules/mocha/bin/options.js",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/GitHub/ContentForTests/StatusDashboard/GetInfo.js",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/GitHub/ContentForTests/StatusDashboard/Dashboard.html",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/GitHub/ContentForTests/Forms/Form.html",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/GitHub/ContentForTests/StatusDashboard/Status.html",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/GitHub/ContentForTests/Forms/style.css",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/GitHub/ContentForTests/Status.html",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/GitHub/ContentForTests/PhantomJS/loadForm.js",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/GitHub/ContentForTests/Forms/script.js",
+		"/C/Users/Alexander/Desktop/PubsBars",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/GitHub/ContentForTests/PhantomJS/formsTest.js",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/GitHub/ContentForTests/phantomjs-2.1.1-windows/tests/formsTest.js",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/GitHub/bootstrap/docs/examples/cover/index.html",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/GitHub/bootstrap/docs/examples/navbar-top-fixed/index.html",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/GitHub/Tests/style.css",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/GitHub/Tests/script.js",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/GitHub/Tests/Form.html",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/GitHub/Tests/Style.css",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/Resume/home.html",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/Alexander Lazaris/home.html",
+		"/C/Users/Alexander/Desktop/Projects/Hackathon/RockPaperShotgun/home.html",
+		"/C/Users/Alexander/Desktop/Projects/Hackathon/RockPaperShotgun/script.js",
+		"/C/Users/Alexander/Desktop/Projects/Hackathon/home.html",
+		"/C/Users/Alexander/Desktop/Projects/Hackathon/script.js",
+		"/C/Users/Alexander/AppData/Local/Android/android-sdk/extras/google/google_play_services/docs/reference/lists.js",
+		"/C/Users/Alexander/Downloads/Optus Mobile Network Coverage.html",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/animated-transition-effects/clones.html",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/Resume/css/style.css",
+		"/C/Users/Alexander/Downloads/product-quick-view/index.html",
+		"/C/Users/Alexander/Desktop/Projects/Dinder2/DinderDemoNew.html",
+		"/C/Users/Alexander/Desktop/Projects/Web Dev/animated-transition-effects/cartoon.html",
+		"/C/Users/Alexander/Desktop/hosts",
+		"/C/Users/Alexander/AppData/Roaming/npm/node_modules/browser-sync/lib/server/static-server.js",
+		"/C/Users/Alexander/AppData/Roaming/npm/node_modules/browser-sync/lib/server/proxy-server.js",
+		"/C/Users/Alexander/AppData/Roaming/npm/node_modules/browser-sync/bin/browser-sync.js",
+		"/C/Users/Alexander/Desktop/Projects/Dinder2/index.html",
+		"/C/Users/Alexander/AppData/Roaming/npm/node_modules/browser-sync/index.js",
+		"/C/Users/Alexander/Desktop/DemystifyingData",
+		"/C/Users/Alexander/Downloads/bootstrap-3.3.5-dist/test.html",
+		"/C/Users/Alexander/Downloads/bootstrap-3.3.5-dist/js/npm.js",
+		"/C/xampp/htdocs/test.html",
+		"/C/xampp/htdocs/index.html"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"	 \n",
+			"\n	 ",
+			"	 \n",
+			"p-company",
+			"img",
+			"		\n",
+			"history",
+			"credit",
+			"credithistory",
+			"Fixed",
+			"basic",
+			"repayment",
+			"fee",
+			"fees",
+			"interest",
+			"maxTer",
+			"LMI",
+			"capitali",
+			"capitalise",
+			"notes",
+			"ongoingFeeNotes",
+			"ongoing",
+			"notes",
+			"right",
+			"createPlayers",
+			"cd-btn",
+			"cd-modal-trigger"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 128.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"Files/Home.html"
+			],
+			[
+				"lead",
+				"Files/Lead.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 217.0,
+	"status_bar_visible": true
+}
