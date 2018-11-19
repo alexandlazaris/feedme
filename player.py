@@ -12,6 +12,9 @@ class PlayerStart(object):
 
     def getHealth(self):
         return "health: ", self.health
+
+    def getHealthValue(self):
+        return self.health
         
     def getAttack(self):
         return "attack: ", self.attack
@@ -40,7 +43,7 @@ class PlayerStart(object):
             self.defence += randomNumDefence
 
 
-    def game():
+    # sdef game():
         
 	# def prompt(self):
 	# 	choice = input("what to do ")
