@@ -1,3 +1,5 @@
 ./test-reports
 ./vscode
 todo.txt
+./*.pyc
+./*/__pycache__
