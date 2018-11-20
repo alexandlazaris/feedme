@@ -1,9 +1,9 @@
-./test-reports
-./vscode
+test-reports
+.vscode
 todo.txt
 __pycache__
 */__pycache__
-./tests/__pycache__
-./game/__pycache__
+tests/__pycache__
+game/__pycache__
 *.py[cod]
 *$py.class
