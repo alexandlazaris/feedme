@@ -1,11 +1,13 @@
-from .. import player
+from ..game.player import PlayerStart
+# import sys
+# sys.path.append("..") # Adds higher directory to python modules path.
 
 HEALTH = 10
 ATTACK = 13
 DEFENCE = 6
 
 def test_setupConstructPlayer():
-    testPlayer = player.PlayerStart("Alexander", HEALTH, ATTACK, DEFENCE)
+    testPlayer = PlayerStart("Alexander", HEALTH, ATTACK, DEFENCE)
     return testPlayer
 
 def test_playerHealthIsSet():
