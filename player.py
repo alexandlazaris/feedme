@@ -18,9 +18,15 @@ class PlayerStart(object):
         
     def getAttack(self):
         return "attack: ", self.attack
+    
+    def getAttackValue(self):
+        return self.attack
 
     def getDefence(self):#what is self?
         return "defence: ", self.defence
+
+    def getDefenceValue(self):
+        return self.defence
 
     def getAllStats(self):
         return "health: ", self.health, "attack: ", self.attack, "defence: ", self.defence
