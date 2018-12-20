@@ -1,11 +1,11 @@
-import os
-import random
+import threading
 from player import PlayerStart as newPlayerStart
 
-class StartGame(object):
-	'A player object with default fields'
-	
-	newPlayer = newPlayerStart("Alexander", 5, 1, 1)
-	print (newPlayer.getAllStats())
-	newPlayer.lvlup()	
-	print (newPlayer.getAllStats())
+newPlayer = newPlayerStart("Alexander", 10, 3, 3)
+
+def main():
+    threading.Timer(3.0, main).start()
+    newPlayer.lvlup()
+    newPlayer.damageHealth()
+
+main()

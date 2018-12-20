@@ -1,5 +1,7 @@
 import os
 import random
+import sys
+import threading
 
 class PlayerStart(object): 
     'Create a player'
@@ -15,6 +17,11 @@ class PlayerStart(object):
 
     def getHealthValue(self):
         return self.health
+
+    def setHealthValue(self, damage):
+        tempHealth = self.health - damage
+        self.health = tempHealth
+        self.getHealth()
         
     def getAttack(self):
         return "attack: ", self.attack
@@ -28,32 +35,44 @@ class PlayerStart(object):
     def getDefenceValue(self):
         return self.defence
 
+    def getGameState(self):
+        sys.exit(1)
+
     def getAllStats(self):
-        return "health: ", self.health, "attack: ", self.attack, "defence: ", self.defence
-        # return "attack: ", self.attack
-        # return "defence: ", self.defence
+        if self.getHealthValue <= 0:
+            print "GAME OVER!\n"
+            sys.exit(1)
+        elif self.getHealthValue >= 1:
+            return "health: {} - attack: {} - defence {}\n".format(self.health, self.attack,self.defence)
 
     def lvlup(self):
-        print ("***LEVEL UP***")
-        randomNumHealth = random.randint(1,9)
-        randomNumAttack = random.randint(1,9)
-        randomNumDefence = random.randint(1,9)
+        print ("***   LEVEL UP   ***\n")
+        randomNumHealth = random.randint(1, 9)
+        randomNumAttack = random.randint(1, 3)
+        randomNumDefence = random.randint(1, 3)
         if (max(randomNumHealth, randomNumAttack, randomNumDefence) == randomNumHealth):
-            print ("health++")
+            # print ("health++")
             self.health += randomNumHealth
         if (max(randomNumHealth, randomNumAttack, randomNumDefence) == randomNumAttack):
-            print ("attack++")
+            # print ("attack++")
             self.attack += randomNumAttack
         if (max(randomNumHealth, randomNumAttack, randomNumDefence) == randomNumDefence):
-            print ("defence++")
+            # print ("defence++")
             self.defence += randomNumDefence
-
-
-    # sdef game():
+        self.getAllStats()
         
-	# def prompt(self):
-	# 	choice = input("what to do ")
-	# 	if int(choice) == 1:
-	# 		Player.lvlup(self)
-	# 	else:
-	# 		print("nothing to do")
+    def damageHealth(self):
+        print ("spear incoming!\n")
+        randomChance = random.randint(0,1)
+        if randomChance == 1:
+            print "-----------> HIT!\n"
+            # randMinRange = (self.getHealthValue() - 10)
+            # randMaxRange = (self.getHealthValue() - 5)
+            # randomNumDamage = random.randint(randMinRange,randMaxRange)
+            randomNumDamage = random.randint(1, 10)
+            print "damage taken: {}!\n".format(randomNumDamage)
+            self.setHealthValue(randomNumDamage)
+            print self.getAllStats()
+        elif randomChance == 0:
+            print "---#|| MISS!\n"
+        
