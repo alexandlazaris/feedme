@@ -40,7 +40,7 @@ class PlayerStart(object):
 
     def getAllStats(self):
         if self.getHealthValue <= 0:
-            print "GAME OVER!\n"
+            print ("GAME OVER!\n")
             sys.exit(1)
         elif self.getHealthValue >= 1:
             return "health: {} - attack: {} - defence {}\n".format(self.health, self.attack,self.defence)
@@ -62,11 +62,11 @@ class PlayerStart(object):
         print ("spear incoming!\n")
         randomChance = random.randint(0,1)
         if randomChance == 1:
-            print "-----------> HIT!\n"
+            print ("-----------> HIT!\n")
             randomNumDamage = random.randint(1, 10)
-            print "damage taken: {}!\n".format(randomNumDamage)
+            print ("damage taken: {}!\n".format(randomNumDamage))
             self.setHealthValue(randomNumDamage)
-            print self.getAllStats()
+            print (self.getAllStats())
         elif randomChance == 0:
-            print "---#|| MISS!\n"
+            print ("---#|| MISS!\n")
         
