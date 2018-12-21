@@ -29,7 +29,7 @@ class PlayerStart(object):
     def getAttackValue(self):
         return self.attack
 
-    def getDefence(self):#what is self?
+    def getDefence(self):
         return "defence: ", self.defence
 
     def getDefenceValue(self):
@@ -51,13 +51,10 @@ class PlayerStart(object):
         randomNumAttack = random.randint(1, 3)
         randomNumDefence = random.randint(1, 3)
         if (max(randomNumHealth, randomNumAttack, randomNumDefence) == randomNumHealth):
-            # print ("health++")
             self.health += randomNumHealth
         if (max(randomNumHealth, randomNumAttack, randomNumDefence) == randomNumAttack):
-            # print ("attack++")
             self.attack += randomNumAttack
         if (max(randomNumHealth, randomNumAttack, randomNumDefence) == randomNumDefence):
-            # print ("defence++")
             self.defence += randomNumDefence
         self.getAllStats()
         
@@ -66,9 +63,6 @@ class PlayerStart(object):
         randomChance = random.randint(0,1)
         if randomChance == 1:
             print "-----------> HIT!\n"
-            # randMinRange = (self.getHealthValue() - 10)
-            # randMaxRange = (self.getHealthValue() - 5)
-            # randomNumDamage = random.randint(randMinRange,randMaxRange)
             randomNumDamage = random.randint(1, 10)
             print "damage taken: {}!\n".format(randomNumDamage)
             self.setHealthValue(randomNumDamage)
