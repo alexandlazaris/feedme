@@ -22,7 +22,7 @@ class PlayerStart(object):
     def getAttackValue(self):
         return self.attack
 
-    def getDefence(self):#what is self?
+    def getDefence(self):
         return "defence: ", self.defence
 
     def getDefenceValue(self):
@@ -30,11 +30,9 @@ class PlayerStart(object):
 
     def getAllStats(self):
         return "health: ", self.health, "attack: ", self.attack, "defence: ", self.defence
-        # return "attack: ", self.attack
-        # return "defence: ", self.defence
 
     def lvlup(self):
-        print ("***LEVEL UP***")
+        print ("*** LEVEL UP ***")
         randomNumHealth = random.randint(1,9)
         randomNumAttack = random.randint(1,9)
         randomNumDefence = random.randint(1,9)
@@ -47,13 +45,3 @@ class PlayerStart(object):
         if (max(randomNumHealth, randomNumAttack, randomNumDefence) == randomNumDefence):
             print ("defence++")
             self.defence += randomNumDefence
-
-
-    # sdef game():
-        
-	# def prompt(self):
-	# 	choice = input("what to do ")
-	# 	if int(choice) == 1:
-	# 		Player.lvlup(self)
-	# 	else:
-	# 		print("nothing to do")
