@@ -9,6 +9,7 @@
 - Every 3 seconds you level up!
 
 `pip install -r requirements.txt`
+`pytest tests/tests.py -v`
 `python3 game/main.py`
 
 ## TODO:
@@ -16,3 +17,5 @@
 - Add random enemy encounters
 - If enemies have more attack than player, minus enemy attack from player heath. And vice-versa for player
 - Add game over state if player health is 0
+- create an event system, which triggers an event every nth second
+- events include: nothing, enemy, lvlup
