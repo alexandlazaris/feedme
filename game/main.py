@@ -1,31 +1,51 @@
 import time
-import datetime
 import os
 import random
-from player import PlayerStart as newPlayerStart
 import subprocess
+# from <file/directory> import <class>
+from enemy import EnemyClass
+from player import PlayerClass
 
 class StartGame(object):
 	'A player object with default fields'
-	newPlayer = newPlayerStart("Alexander", 1, 1, 1)
-	startTime = datetime.datetime.now()
-	while True:
-		newPlayer.lvlup()
-		health = str(newPlayer.getHealthValue())
-		attack = str(newPlayer.getAttackValue())
-		defence = str(newPlayer.getDefenceValue())
-		healthLevel = str(newPlayer.healthLevel)
-		attackLevel = str(newPlayer.attackLevel)
-		defenceLevel = str(newPlayer.defenceLevel)
-
-		file = open(f"./game/gameData-{startTime}.txt", "w")
+	playerName = input("Before we begin, what is your name? ")
+	print(f"Welcome {playerName}, let's begin!")
+	print ("Start game!")
+	p1 = PlayerClass(playerName, 5, 2, 1)
+	e2 = EnemyClass("Baddie")
+	p1.printAllStats()
+	while p1.getPlayerAliveBool():
+		print("Pondering next move ...")
+		choice = random.randint(1,3)
+		print("Moving on ...")
+		if choice == 1:
+			print("Nice! Found some XP.")
+			p1.gainExp()
+		elif choice == 2:
+			print("A WILD ENEMY APPEARED!")
+			p1.getHit(e2.getAttack())
+		elif choice == 3:
+			print("Phew nothing here, take a little rest to recover HP.")
+			p1.recoverHealth()
+		else:
+			print ("No options detected, something wrong.")
+		p1.checkLvlUp()
+		health = str(p1.getMaxHP())
+		attack = str(p1.getAttackValue())
+		defence = str(p1.getDefenceValue())
+		healthLevel = str(p1.healthLevel)
+		attackLevel = str(p1.attackLevel)
+		defenceLevel = str(p1.defenceLevel)
+		file = open(f"./game/gameData.txt", "w")
 		file.truncate(0)
-		file.write(f"Health,{healthLevel},{health}\n")
-		file.write(f"Attack,{attackLevel},{attack}\n")
-		file.write(f"Defence,{defenceLevel},{defence}")
+		file.write(f"Player: {p1.getName()}\n")
+		file.write(f"Max HP: {health}\n")
+		file.write(f"Total lvls: {p1.getCurrentLevel()}\n")
+		file.write(f"Total XP: {p1.getTotalExp()}\n")
+		file.write(f"Total damage taken: {p1.getTotalDamageTaken()}\n")
+		file.write(f"Hits taken: {p1.getNumberOfHits()}\n")
+		file.write(f"Start time: {p1.getStartTime()}\n")
+		file.write(f"End time: {p1.getEndTime()}")
 		file.close()
-
-		subprocess.call("clear", shell=True)
-		subprocess.call("termgraph game/gameData.txt --color {green,yellow}", shell=True)
-		print(f"Lvl up has been called {str(newPlayer.totalLvlUps)} times")
+		p1.checkHP()
 		time.sleep(3)
