@@ -1,10 +1,8 @@
 import time
-import os
 import random
-import subprocess
-# from <file/directory> import <class>
 from enemy import EnemyClass
 from player import PlayerClass
+from file_manager import write_data, generate_graph
 
 class StartGame(object):
 	'A player object with default fields'
@@ -29,23 +27,8 @@ class StartGame(object):
 			p1.recoverHealth()
 		else:
 			print ("No options detected, something wrong.")
+		write_data(p1)
+		generate_graph(p1)
 		p1.checkLvlUp()
-		health = str(p1.getMaxHP())
-		attack = str(p1.getAttackValue())
-		defence = str(p1.getDefenceValue())
-		healthLevel = str(p1.healthLevel)
-		attackLevel = str(p1.attackLevel)
-		defenceLevel = str(p1.defenceLevel)
-		file = open(f"./game/gameData.txt", "w")
-		file.truncate(0)
-		file.write(f"Player: {p1.getName()}\n")
-		file.write(f"Max HP: {health}\n")
-		file.write(f"Total lvls: {p1.getCurrentLevel()}\n")
-		file.write(f"Total XP: {p1.getTotalExp()}\n")
-		file.write(f"Total damage taken: {p1.getTotalDamageTaken()}\n")
-		file.write(f"Hits taken: {p1.getNumberOfHits()}\n")
-		file.write(f"Start time: {p1.getStartTime()}\n")
-		file.write(f"End time: {p1.getEndTime()}")
-		file.close()
 		p1.checkHP()
-		time.sleep(3)
+		time.sleep(1)
