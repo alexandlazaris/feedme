@@ -2,33 +2,35 @@ import time
 import random
 from enemy import EnemyClass
 from player import PlayerClass
-from file_manager import write_data, generate_graph
+from file_manager import write_data, generate_graph_type_one, generate_radar_graph_player, generate_radar_graph_enemy
 
 class StartGame(object):
 	'A player object with default fields'
-	playerName = input("Before we begin, what is your name? ")
-	print(f"Welcome {playerName}, let's begin!")
-	print ("Start game!")
-	p1 = PlayerClass(playerName, 5, 2, 1)
-	e2 = EnemyClass("Baddie")
-	p1.printAllStats()
-	while p1.getPlayerAliveBool():
+	name_input = input("Before we begin, what is your name? ")
+	print(f"Welcome {name_input} to your RPG!")
+	player = PlayerClass(name_input, 10, 2, 1)
+	enemy = EnemyClass(1,1,1)
+	player.print_stats()
+	while player.is_alive:
 		print("Pondering next move ...")
 		choice = random.randint(1,3)
-		print("Moving on ...")
 		if choice == 1:
-			print("Nice! Found some XP.")
-			p1.gainExp()
+			print("Nice, I found some XP. I'll keep collecting these to level up.")
+			player.add_xp(3)
+			enemy.add_xp()
 		elif choice == 2:
-			print("A WILD ENEMY APPEARED!")
-			p1.getHit(e2.getAttack())
+			print("A WILD ENEMY APPEARED! Hope it doesn't kill me.")
+			player.get_hit(enemy.attack)
 		elif choice == 3:
-			print("Phew nothing here, take a little rest to recover HP.")
-			p1.recoverHealth()
+			print("Phew time for a little rest to recover HP.")
+			player.recover_hp()
+			print("Moving on ...")
 		else:
-			print ("No options detected, something wrong.")
-		write_data(p1)
-		generate_graph(p1)
-		p1.checkLvlUp()
-		p1.checkHP()
+			print ("Something went wrong ... skipping turn.")
+		write_data(player)
+		generate_graph_type_one(player)
+		generate_radar_graph_player(player)
+		generate_radar_graph_enemy(enemy)
+		player.checkLvlUp()
+		player.check_hp()
 		time.sleep(1)
