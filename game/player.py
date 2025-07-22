@@ -1,127 +1,74 @@
-import os
 import random
 from datetime import datetime
-class PlayerClass(object): 
-    'Create a player'
-    
-    healthLevel = 0
-    attackLevel = 0
-    defenceLevel = 0
-    totalLvlUps = 0
-    totalExp = 0
-    currentExp = 0
-    nextLvlExp = 0
-    numberOfHits = 0
-    maxHP = 0
-    startTime = 0
-    playerIsAlive = False
-    totalDamageTaken = 0
-    
 
-    def __init__(self, name, health, attack, defence):
+class PlayerClass(object):
+    "Create a player"
+
+    level = 1
+    total_xp = 10
+    current_xp = 0
+    xp_to_next_level = 0
+    total_number_of_hits = 0
+    max_hp = 0
+    start_time = 0
+    is_alive = False
+    total_dmg_taken = 0
+
+    def __init__(self, name, hp, attack, defence):
         self.name = name
-        self.health = health
+        self.hp = hp
         self.attack = attack
         self.defence = defence
-        self.calculateNextLevelForExp()
-        self.startTime = datetime.now().strftime("%d %b %y, %H:%M:%S")
-        self.maxHP = health
-        self.playerIsAlive = True
-    
-    def getName(self):
-        return self.name
-    
-    def calculateNextLevelForExp(self):
-        self.nextLvlExp += 5
-    
-    def addExp(self, addAmount):
-        print (f"Gained {addAmount} exp")
-        self.currentExp += addAmount
-        self.totalExp += addAmount
+        self.xp_to_next_level += 5
+        self.start_time = datetime.now().strftime("%d %b %y, %H:%M:%S")
+        self.max_hp = hp
+        self.is_alive = True
 
-    def getTotalExp(self):
-        return self.totalExp
-    
-    def getCurrentExp(self):
-        return self.currentExp
-        
-    def getNextLvlExp(self):
-        return self.nextLvlExp
+    def add_xp(self, addAmount):
+        print(f"Gained {addAmount} exp")
+        self.current_xp += addAmount
+        self.total_xp += addAmount
 
-    def resetCurrentExp(self):
-        self.currentExp = 0
-
-    def getCurrentLevel(self):
-        return self.totalLvlUps
-
-    def getMaxHP(self):
-        return self.maxHP
-
-    def getHealthValue(self):
-        return self.health
-    
-    def getAttackValue(self):
-        return self.attack
-
-    def getDefenceValue(self):
-        return self.defence
-
-    def printAllStats(self):
-        print (f"{self.name} stats:\nHP: {self.getHealthValue()}\nAttack: {self.getAttackValue()}\nDefence: {self.getDefenceValue()}")
-
-    def gainExp(self):
-        self.addExp(3)
+    def print_stats(self):
+        print(
+            f"*** STATS ***\nNAME: {self.name}\nHP: {self.hp}\nATK: {self.attack}\nDEF: {self.defence}\nLEV: {self.level}\n*** ^ ^ ^ ***"
+        )
 
     def checkLvlUp(self):
-        if self.getCurrentExp() > self.getNextLvlExp():
-            print ("*** LEVEL UP ***")
-            print (f"Total XP: {self.getTotalExp()}")
-            self.totalLvlUps += 1
-            randomNumHealth = random.randint(1,9)
-            randomNumAttack = random.randint(1,9)
-            randomNumDefence = random.randint(1,9)
-            self.healthLevel += 1
-            self.maxHP += randomNumHealth
-            self.health += randomNumHealth
-            self.attack += randomNumAttack
-            self.attackLevel += 1
-            self.defence += randomNumDefence
-            self.defenceLevel += 1
-            self.calculateNextLevelForExp()
-            print (f"Next lvl up: {self.getNextLvlExp()}")
-            self.resetCurrentExp()
-            self.printAllStats()
-    
-    def getHit(self, damageTaken):
-        self.health -= damageTaken
-        print (f"Ouch! {damageTaken} damage taken!")
-        print (f"HP: {self.getHealthValue()}")
-        self.totalDamageTaken += damageTaken
-        self.numberOfHits += 1
+        if self.current_xp > self.xp_to_next_level:
+            print("*** LEVEL UP ***")
+            print(f"Total XP: {self.total_xp}")
+            self.level += 1
+            random_hp_increase = random.randint(1, 9)
+            random_attack_increase = random.randint(1, 9)
+            random_defence_increase = random.randint(1, 9)
+            self.max_hp += random_hp_increase
+            self.hp += random_hp_increase
+            self.attack += random_attack_increase
+            self.defence += random_defence_increase
+            self.xp_to_next_level += 5
+            self.current_xp = 0
+            self.print_stats()
 
-    def getTotalDamageTaken(self):
-        return self.totalDamageTaken
-    
-    def printHealth(self):
-        print (f"HP: {self.getHealthValue()}")
+    def get_hit(self, damage):
+        self.hp -= damage
+        print(f"ouch! {damage} damage taken!")
+        print(f"HP: {self.hp}")
+        self.total_dmg_taken += damage
+        self.total_number_of_hits += 1
 
-    def getNumberOfHits(self):
-        return self.numberOfHits
-    
-    def recoverHealth(self):
-        self.health += 1
-        self.printHealth()
-        
-    def checkHP(self):
-        if self.getHealthValue() <= 0:
-            print (f"{self.getName()} has no more HP. GAME OVER")
-            self.playerIsAlive = False
+    def print_hp(self):
+        print(f"HP: {self.hp}")
 
-    def getPlayerAliveBool(self):
-        return self.playerIsAlive
+    def recover_hp(self):
+        self.hp += 1
+        self.print_hp()
 
-    def getStartTime(self):
-        return self.startTime
+    def check_hp(self):
+        if self.hp <= 0:
+            print(f"{self.name} has no more HP. GAME OVER")
+            self.is_alive = False
 
-    def getEndTime(self):
+    # modify this to be time alive for the player in seconds
+    def get_end_time(self):
         return datetime.now().strftime("%d %b %y, %H:%M:%S")
