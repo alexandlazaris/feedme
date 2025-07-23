@@ -1,3 +1,0 @@
-Health,4,26
-Attack,10,72
-Defence,5,33
