@@ -1,11 +1,10 @@
-import os
-import random
 from faker import Faker
 fake = Faker()
 
 class EnemyClass(object):
     'Enemy object'
     hp = 0
+    max_hp = 0
     attack = 0
     defence = 0
     current_xp = 0
@@ -18,15 +17,14 @@ class EnemyClass(object):
         self.hp = hp
         self.attack = attack
         self.defence = defence
-        # self.health = random.randint(1,9)
-        # self.attack = random.randint(1,9)
-        # self.defence = random.randint(1,9)
 
     def print_stuff(self):
         print (fake.random_digit_above_two())
     
     def level_up(self):
-        self.hp += fake.random_digit_not_null()
+        hp_increase = fake.random_digit_not_null()
+        self.hp += hp_increase
+        self.max_hp = hp_increase
         self.attack += fake.random_digit_not_null()
         self.defence += fake.random_digit_not_null()
         self.xp_to_next_level = 10
