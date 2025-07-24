@@ -111,7 +111,7 @@ def generate_combined_graph(player: PlayerClass, enemy: EnemyClass, file_name: s
         ha="right",
         va="center",
     )
-    title1_text = axs["title"].text(
+    player_label_name = axs["title"].text(
         0.01,
         0.65,
         f"Player: {player.name}",
@@ -121,7 +121,7 @@ def generate_combined_graph(player: PlayerClass, enemy: EnemyClass, file_name: s
         ha="left",
         va="center",
     )
-    title2_text = axs["title"].text(
+    player_label_turns = axs["title"].text(
         0.01,
         0.25,
         f"Turns survived: {player.turns_taken}",
@@ -131,10 +131,20 @@ def generate_combined_graph(player: PlayerClass, enemy: EnemyClass, file_name: s
         ha="left",
         va="center",
     )
-    title3_text = axs["title"].text(
+    enemy_label_name = axs["title"].text(
         0.99,
         0.65,
         f"Enemy: {enemy.name}",
+        fontsize=25,
+        fontproperties=default_font,
+        ha="right",
+        va="center",
+        color="#d80499",
+    )
+    enemy_label_phrase = axs["title"].text(
+        0.99,
+        0.25,
+        f"Specialty: {enemy.specialty}",
         fontsize=25,
         fontproperties=default_font,
         ha="right",
