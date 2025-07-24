@@ -19,7 +19,6 @@ class StartGame(object):
 	print(f"Well, well, well. Today you are facing ... {enemy.name}!")
 	enemy.print_stats()
 	input(f"Prepare yourself. Your life long battle with {enemy.name} is about to begin. Press ENTER to begin. Good luck.")
-
 	while player.is_alive:
 		print("Pondering next move ...")
 		choice = random.randint(1,3)
@@ -29,8 +28,8 @@ class StartGame(object):
 			enemy.add_xp()
 		elif choice == 2:
 			print(f"Oh no, {enemy.name} appeared! WHACK!.")
-			player.get_hit(enemy.attack)
-			player.turns_taken += 1
+			player.get_hit(enemy)
+			player.check_hp()
 		elif choice == 3:
 			print("Phew nobody around, time to take a little rest & recover HP.")
 			player.recover_hp()
@@ -38,6 +37,6 @@ class StartGame(object):
 		else:
 			print ("Something went wrong ... skipping turn.")
 		write_data(player, enemy)
+		player.add_turn()
 		generate_combined_graph(player, enemy, file_name="rpg_radar.png")
-		player.check_hp()
 		time.sleep(1)
