@@ -1,51 +1,42 @@
 import time
-import os
 import random
-import subprocess
-# from <file/directory> import <class>
 from enemy import EnemyClass
 from player import PlayerClass
+from file_manager import write_data, generate_combined_graph
 
 class StartGame(object):
-	'A player object with default fields'
-	playerName = input("Before we begin, what is your name? ")
-	print(f"Welcome {playerName}, let's begin!")
-	print ("Start game!")
-	p1 = PlayerClass(playerName, 5, 2, 1)
-	e2 = EnemyClass("Baddie")
-	p1.printAllStats()
-	while p1.getPlayerAliveBool():
+	print(f"Welcome to Feed me, your RPG running in the command line.")
+	print(f"The goal is to stay alive and outlive your enemy. Who is your enemy? Well that differs for each run.")
+	print(f"Now, in order for your journey to begin, let's start with your name.")
+	name_input = input("What is your name? ")
+	
+	player = PlayerClass(name_input, 10, 2, 2)
+	print(f"Welcome {name_input} to your RPG! Before we begin, here are your starting stats.")
+	player.print_stats()
+
+	input("OK, let's take a look at your competitor. Press ENTER when you are ready.")
+	enemy = EnemyClass(1,1,1)
+	print(f"Well, well, well. Today you are facing ... {enemy.name}!")
+	enemy.print_stats()
+	input(f"Prepare yourself. Your life long battle with {enemy.name} is about to begin. Press ENTER to begin. Good luck.")
+	while player.is_alive:
 		print("Pondering next move ...")
 		choice = random.randint(1,3)
-		print("Moving on ...")
 		if choice == 1:
-			print("Nice! Found some XP.")
-			p1.gainExp()
+			print("Oooo, you found some XP. Keep collecting XP to level up & improve your stats.")
+			player.add_xp()
+			enemy.add_xp()
 		elif choice == 2:
-			print("A WILD ENEMY APPEARED!")
-			p1.getHit(e2.getAttack())
+			print(f"Oh no, {enemy.name} appeared! WHACK!.")
+			player.get_hit(enemy)
+			player.check_hp()
 		elif choice == 3:
-			print("Phew nothing here, take a little rest to recover HP.")
-			p1.recoverHealth()
+			print("Phew nobody around, time to take a little rest & recover HP.")
+			player.recover_hp()
+			print("Moving on ...")
 		else:
-			print ("No options detected, something wrong.")
-		p1.checkLvlUp()
-		health = str(p1.getMaxHP())
-		attack = str(p1.getAttackValue())
-		defence = str(p1.getDefenceValue())
-		healthLevel = str(p1.healthLevel)
-		attackLevel = str(p1.attackLevel)
-		defenceLevel = str(p1.defenceLevel)
-		file = open(f"./game/gameData.txt", "w")
-		file.truncate(0)
-		file.write(f"Player: {p1.getName()}\n")
-		file.write(f"Max HP: {health}\n")
-		file.write(f"Total lvls: {p1.getCurrentLevel()}\n")
-		file.write(f"Total XP: {p1.getTotalExp()}\n")
-		file.write(f"Total damage taken: {p1.getTotalDamageTaken()}\n")
-		file.write(f"Hits taken: {p1.getNumberOfHits()}\n")
-		file.write(f"Start time: {p1.getStartTime()}\n")
-		file.write(f"End time: {p1.getEndTime()}")
-		file.close()
-		p1.checkHP()
-		time.sleep(3)
+			print ("Something went wrong ... skipping turn.")
+		write_data(player, enemy)
+		player.add_turn()
+		generate_combined_graph(player, enemy, file_name="rpg_radar.png")
+		time.sleep(1)

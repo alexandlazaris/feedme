@@ -1,127 +1,81 @@
-import os
-import random
 from datetime import datetime
-class PlayerClass(object): 
-    'Create a player'
-    
-    healthLevel = 0
-    attackLevel = 0
-    defenceLevel = 0
-    totalLvlUps = 0
-    totalExp = 0
-    currentExp = 0
-    nextLvlExp = 0
-    numberOfHits = 0
-    maxHP = 0
-    startTime = 0
-    playerIsAlive = False
-    totalDamageTaken = 0
-    
+from faker import Faker
+from enemy import EnemyClass
+fake = Faker()
+class PlayerClass(object):
+    "Create a player"
 
-    def __init__(self, name, health, attack, defence):
+    level = 1
+    total_xp = 10
+    current_xp = 0
+    xp_to_next_level = 0
+    total_number_of_hits = 0
+    max_hp = 0
+    start_time = 0
+    is_alive = False
+    total_dmg_taken = 0
+    turns_taken = 0
+
+    def __init__(self, name, hp, attack, defence):
         self.name = name
-        self.health = health
+        self.hp = hp
         self.attack = attack
         self.defence = defence
-        self.calculateNextLevelForExp()
-        self.startTime = datetime.now().strftime("%d %b %y, %H:%M:%S")
-        self.maxHP = health
-        self.playerIsAlive = True
+        self.xp_to_next_level = 5
+        self.start_time = datetime.now().strftime("%d %b %y, %H:%M:%S")
+        self.max_hp = hp
+        self.is_alive = True
+
+    def add_xp(self):
+        xp_gain = fake.random_int(1,9)
+        self.current_xp += xp_gain
+        self.total_xp += xp_gain
+        if self.current_xp > self.xp_to_next_level:
+            self.level_up()
+            self.current_xp = 0
+            self.print_stats()
+
+    def print_stats(self):
+        print(
+            f"*** STATS ***\nNAME: {self.name}\nHP: {self.hp}\nATK: {self.attack}\nDEF: {self.defence}\nLEV: {self.level}\nNEXT LEVEL: {self.xp_to_next_level} XP\n*** ^ ^ ^ ***"
+        )
     
-    def getName(self):
-        return self.name
-    
-    def calculateNextLevelForExp(self):
-        self.nextLvlExp += 5
-    
-    def addExp(self, addAmount):
-        print (f"Gained {addAmount} exp")
-        self.currentExp += addAmount
-        self.totalExp += addAmount
+    def level_up(self):
+        print("*** LEVEL UP ***")
+        hp_increase = fake.random_digit_not_null()
+        self.hp += hp_increase
+        self.max_hp = hp_increase
+        self.attack += fake.random_digit_not_null()
+        self.defence += fake.random_digit_not_null()
+        self.xp_to_next_level += 5
+        self.level += 1
 
-    def getTotalExp(self):
-        return self.totalExp
-    
-    def getCurrentExp(self):
-        return self.currentExp
-        
-    def getNextLvlExp(self):
-        return self.nextLvlExp
+    def get_hit(self, enemy: EnemyClass):
+        scaled_atk = enemy.attack * (1 + 0.05 * enemy.level)
+        scaled_def = self.defence * (1 + 0.04 * self.level)
+        damage = int(scaled_atk * (scaled_atk / (scaled_atk + scaled_def)))
 
-    def resetCurrentExp(self):
-        self.currentExp = 0
+        self.hp -= damage
+        print(f"Ouch! {damage} damage taken! {self.hp} HP remaining.")
+        self.total_dmg_taken += damage
+        self.total_number_of_hits += 1
 
-    def getCurrentLevel(self):
-        return self.totalLvlUps
+    def recover_hp(self):
+        hp_recovered= fake.random_int(1, 5)
+        self.hp += hp_recovered
+        print(f"Recovered {hp_recovered} HP, now at {self.hp}")
 
-    def getMaxHP(self):
-        return self.maxHP
+    def check_hp(self):
+        if self.hp <= 0:
+            print(f"{self.name} has no more HP. GAME OVER")
+            self.is_alive = False
 
-    def getHealthValue(self):
-        return self.health
-    
-    def getAttackValue(self):
-        return self.attack
+    def add_turn(self):
+        self.turns_taken += 1
 
-    def getDefenceValue(self):
-        return self.defence
+    def get_turns(self):
+        print(f"You have survived {self.turns_taken}.")
 
-    def printAllStats(self):
-        print (f"{self.name} stats:\nHP: {self.getHealthValue()}\nAttack: {self.getAttackValue()}\nDefence: {self.getDefenceValue()}")
-
-    def gainExp(self):
-        self.addExp(3)
-
-    def checkLvlUp(self):
-        if self.getCurrentExp() > self.getNextLvlExp():
-            print ("*** LEVEL UP ***")
-            print (f"Total XP: {self.getTotalExp()}")
-            self.totalLvlUps += 1
-            randomNumHealth = random.randint(1,9)
-            randomNumAttack = random.randint(1,9)
-            randomNumDefence = random.randint(1,9)
-            self.healthLevel += 1
-            self.maxHP += randomNumHealth
-            self.health += randomNumHealth
-            self.attack += randomNumAttack
-            self.attackLevel += 1
-            self.defence += randomNumDefence
-            self.defenceLevel += 1
-            self.calculateNextLevelForExp()
-            print (f"Next lvl up: {self.getNextLvlExp()}")
-            self.resetCurrentExp()
-            self.printAllStats()
-    
-    def getHit(self, damageTaken):
-        self.health -= damageTaken
-        print (f"Ouch! {damageTaken} damage taken!")
-        print (f"HP: {self.getHealthValue()}")
-        self.totalDamageTaken += damageTaken
-        self.numberOfHits += 1
-
-    def getTotalDamageTaken(self):
-        return self.totalDamageTaken
-    
-    def printHealth(self):
-        print (f"HP: {self.getHealthValue()}")
-
-    def getNumberOfHits(self):
-        return self.numberOfHits
-    
-    def recoverHealth(self):
-        self.health += 1
-        self.printHealth()
-        
-    def checkHP(self):
-        if self.getHealthValue() <= 0:
-            print (f"{self.getName()} has no more HP. GAME OVER")
-            self.playerIsAlive = False
-
-    def getPlayerAliveBool(self):
-        return self.playerIsAlive
-
-    def getStartTime(self):
-        return self.startTime
-
-    def getEndTime(self):
+    # TODO: modify this to be time alive for the player in seconds
+    def get_end_time(self):
         return datetime.now().strftime("%d %b %y, %H:%M:%S")

@@ -7,3 +7,4 @@ tests/__pycache__
 game/__pycache__
 *.py[cod]
 *$py.class
+.venv

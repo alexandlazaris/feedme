@@ -1,29 +1,27 @@
 [![CircleCI](https://circleci.com/gh/alexandlazaris/feedme.svg?style=svg)](https://circleci.com/gh/alexandlazaris/feedme)
 
-# feedme
+# feedme - CLI RPG
 
-- Create your player
-- Every 3 seconds an event will trigger (walking, nothing or enemy encounter)
-- Gameover when HP is 0
-- Player lvl + HP are hidden during gameplay
-- Enemy progressively gets stronger as player lvls up
+Game details:
 
-`pip install -r requirements.txt`
+- Name your player & duke it out with your chosen enemy
+- Every turn, you'll either rest, gain XP or get WHACKED
+- Game ends when your player HP is 0
+- Both you and enemy stats progressively increase the longer the game goes on
 
-`pytest tests/tests.py -v`
+To start:
 
-`python3 game/main.py`
+1. `python3 -m venv .venv`
+2. `source .venv/bin/activate`
+3. `pip install -r requirements.txt`
+4. `pytest -v --junitxml=test-reports/junit.xml`
+5. `python game/main.py`
 
-## TODO:
+Radar chart:
 
-- Add random enemy encounters > done
-- If enemies have more attack than player, minus enemy attack from player heath. And vice-versa for player
-- Add game over state if player health is 0 > done
-- create an event system, which triggers an event every nth second > done
-- events include: nothing, enemy, lvlup > done
-- host results on a webserver, run python3 -m webbrowser -t "webpage" to show end results
-- refactor enemy & player into a base class
-- need to have nextLvl exp progressively increase higher with each lvl
-- find a better formula to gain exp based on lvl
-- generate a new enemy object based off character stats
-- get player to attack enemy
+Whilst playing you'll see a lovely radar chart showing both your & the enemy stats. This chart live updates as the game plays out. See who can reach level 100 first!
+
+> [!IMPORTANT]
+> Enemy names are randomly generated each run using Faker library. There are no enemies here, only fun times.
+
+![img](./rpg_radar.png)
